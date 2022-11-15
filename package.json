@@ -1,0 +1,23 @@
+{
+  "name": "aleannlab-test-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rivo-Car/aleannlab-test-task.git"
+  },
+  "author": "Rivo-Car",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rivo-Car/aleannlab-test-task/issues"
+  },
+  "homepage": "https://github.com/Rivo-Car/aleannlab-test-task#readme",
+  "dependencies": {
+    "mime-types": "^2.1.35"
+  }
+}
