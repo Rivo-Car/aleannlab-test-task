@@ -12,8 +12,8 @@ const server = http.createServer(
         processStatic(req, res);
         return;
       } else {
-        res.statusCode = 404;
-        res.statusMessage = "Not found!";
+        res.writeHead(404, {"Content-Type": "text/html"});
+        res.write("Not found\n");
         res.end();
       };
     }
