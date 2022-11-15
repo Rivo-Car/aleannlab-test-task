@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete JavaScript Course</title>
+</head>
+<body>
+    <div id="message">Voting system</div>
+    <div>
+        <input type="text" id="addFriend">
+        <input type="button" id="addNew" value="Add Friend">
+    </div>
+    <table id="output"></table>
+    <script>
+      let myArray = [];
+      let button = QS("#addNew");
+      button.addEventListener("click", addNew);
+      let input = QS("#addFriend");
+      let table = QS("table");
+      let counter = 0;
+      function addNew() {
+        let newFriend = input.value;
+        if(newFriend) myArray.push(newFriend);
+        else alert("No input!");
+        output(newFriend);
+      }
+       function output(name) {
+          let element = table.insertRow(counter);
+          element.id = name;
+          appendCell(element, ++counter);
+          let nameCell = appendCell(element, name);
+          let counterCell = appendCell(element, 0);
+          nameCell.addEventListener("click", () => counterCell.innerHTML++);
+      }
+      function appendCell(parent, string){
+        let cell = parent.insertCell();
+        cell.innerHTML = string;
+        cell.id = string ? string : undefined;
+        parent.appendChild(cell);
+        return cell;
+      }
+      function QS(str) {return document.querySelector(str);}
+    </script>
+</body>
+</html>

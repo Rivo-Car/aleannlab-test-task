@@ -1,7 +1,7 @@
 const http = require("http");
-const fs = require('fs');
-const mime = require('mime-types');
-
+const {isHelloworld, processHelloWorld} = require('./handlers/HelloWorld.js');
+const {processIndex} = require('./handlers/indexHandler.js');
+const {isStatic, processStatic} = require('./handlers/StaticHandler.js');
 const server = http.createServer(
     (req, res) => {
       let currentUrl = req.url;

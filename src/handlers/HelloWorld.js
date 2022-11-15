@@ -5,3 +5,8 @@ function isHelloworld(url) {
 function processHelloWorld(request, response) {
     response.end("Hello world!");
 }
+
+module.exports = {
+    processHelloWorld,
+    isHelloworld
+  }
