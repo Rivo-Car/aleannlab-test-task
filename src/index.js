@@ -12,7 +12,9 @@ const server = http.createServer(
         processStatic(req, res);
         return;
       } else {
-        processIndex(req, res)
+        res.statusCode = 404;
+        res.statusMessage = "Not found!";
+        res.end();
       };
     }
 );
