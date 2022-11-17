@@ -1,7 +1,8 @@
 const http = require("http");
 const {isHelloworld, processHelloWorld} = require('./handlers/HelloWorld.js');
-const {processIndex} = require('./handlers/indexHandler.js');
+//const {processIndex} = require('./handlers/indexHandler.js');
 const {isStatic, processStatic} = require('./handlers/StaticHandler.js');
+const {respondWith404} = require('./handlers/404');
 const server = http.createServer(
     (req, res) => {
       let currentUrl = req.url;
@@ -12,9 +13,7 @@ const server = http.createServer(
         processStatic(req, res);
         return;
       } else {
-        res.writeHead(404, {"Content-Type": "text/html"});
-        res.write("Not found\n");
-        res.end();
+        respondWith404(res);
       };
     }
 );
