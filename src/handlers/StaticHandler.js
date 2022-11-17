@@ -7,8 +7,8 @@ function isStatic(url) {
 }
 
 function processStatic(request, response) {
-  const staticDataPath = `./static/${
-    request.url.substring(8, request.url.length)}`;
+  const staticDataPath = `./static/${request.url.substring(8, request.url.length)}`;
+
   fs.readFile(
     staticDataPath,
     { encoding: 'utf8', flag: 'r' },
