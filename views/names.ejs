@@ -1,0 +1,8 @@
+<h1>List of Names</h1>
+
+<ul>
+  <% names.forEach(function (item) { %>
+    <%# Notice how the single quotation mark is escaped in the output HTML %>
+    <li foo='<%= item.id + "'" %>'><%= item.name %> (<%= item.rank %>)</li>
+  <% }) %>
+</ul>
