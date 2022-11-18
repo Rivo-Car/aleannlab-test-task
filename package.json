@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Rivo-Car/aleannlab-test-task#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "mime-types": "^2.1.35"
   },
