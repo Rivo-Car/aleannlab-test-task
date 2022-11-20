@@ -1,8 +1,68 @@
+<head>
+  <%- include('./partials/head'); %>
+</head>
+<header>
+  <%- include('./partials/header'); %>
+</header>
 <h1>List of Names</h1>
 
-<ul>
-  <% names.forEach(function (item) { %>
-    <%# Notice how the single quotation mark is escaped in the output HTML %>
-    <li foo='<%= item.id + "'" %>'><%= item.name %> (<%= item.rank %>)</li>
-  <% }) %>
-</ul>
+<body class="container">
+<div class="row">
+  <div class="col">
+    <ol class="list-group list-group-numbered">
+      <% names.forEach(function (item) { %>
+        <li class="list-group-item d-flex align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"><%= item.name %></div>
+          </div>
+          <div
+            class="btn-toolbar"
+            role="toolbar"
+            aria-label="Toolbar with button groups"
+          >
+            <div class="input-group me-2">
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm disabled"
+              >
+              <i class="bi bi-chevron-up"></i>
+              </button>
+              <input
+                type="text"
+                class="form-control form-control-sm text-center"
+                size="3"
+                disabled
+                value=<%= item.rank %>
+              />
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm"
+              >
+                <i class="bi bi-chevron-down"></i>
+              </button>
+            </div>
+            <div class="btn-group" role="group" aria-label="First group">
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm"
+              >
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm"
+              >
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          </div>
+        </li> 
+        <%}); %>
+    </ol>
+  </div>
+</div>
+<footer>
+  <%- include('./partials/footer'); %>
+</footer>
+
+</body>
