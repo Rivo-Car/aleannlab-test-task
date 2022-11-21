@@ -11,7 +11,9 @@ app.use('/public', express.static(
 ));
 
 app.get('/names', (req, res) => {
-  res.render('names', {
+  res.render('main', {
+    body: 'names',
+    title: 'List of Names',
     names: [
       { id: 1, name: 'Name 1', rank: 10 },
       { id: 2, name: 'Name 2', rank: 20 },
