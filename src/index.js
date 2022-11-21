@@ -12,7 +12,7 @@ app.use('/public', express.static(
 
 app.get('/names', (req, res) => {
   res.render('main', {
-    body: 'names',
+    body: 'partials/names',
     title: 'List of Names',
     names: [
       { id: 1, name: 'Name 1', rank: 10 },
