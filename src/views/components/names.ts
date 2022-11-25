@@ -1,5 +1,9 @@
+import { NamedItem, renderName } from "./name";
+
+export function renderNames(names: NamedItem[]) {
+  return `
 <div class="container">
-  <h1><%- title %></h1>
+  <h1>List of Names</h1>
   <div class="d-grid col-12 mx-auto">
   <button
     type="button"
@@ -11,10 +15,10 @@
   <div class="row">
     <div class="col">
       <ol class="list-group list-group-numbered">
-       <% names.forEach(function (name) { %>
-          <%- include('name', name); %>        
-       <%}); %>
+       ${names.map(renderName).join('\n')}
       </ol>
     </div>
   </div>
 </div>
+`;
+};

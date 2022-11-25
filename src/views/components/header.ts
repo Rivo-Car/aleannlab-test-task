@@ -1,3 +1,5 @@
+export function renderHeader() { 
+return `
 <nav class="navbar bg-info navbar-expand-lg" role="navigation">
     <div>
        <p class = "navbar-text">
@@ -7,3 +9,4 @@
        </p>   
     </div>
  </nav>
+`}

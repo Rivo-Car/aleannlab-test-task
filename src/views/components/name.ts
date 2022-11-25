@@ -1,6 +1,13 @@
+export type NamedItem = {
+  name: string;
+  rank: number;
+};
+
+export function renderName({name, rank}: NamedItem) {
+return `
 <li class="list-group-item d-flex align-items-start">
     <div class="ms-2 me-auto">
-      <div class="fw-bold"><%= name %></div>
+      <div class="fw-bold">${ name }</div>
     </div>
     <div
       class="btn-toolbar"
@@ -19,7 +26,7 @@
           class="form-control form-control-sm text-center"
           size="3"
           disabled
-          value= <%= rank %>
+          value= ${ rank }
         />
         <button
           type="button"
@@ -44,3 +51,4 @@
       </div>
     </div>
   </li> 
+`};

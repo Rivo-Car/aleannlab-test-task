@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import { renderNamesPage } from "./views/pages/names.page";
 
 const app = express();
 
@@ -11,17 +12,15 @@ app.use('/public', express.static(
 ));
 
 app.get('/names', (req, res) => {
-  res.render('main', {
-    body: 'partials/names',
-    title: 'List of Names',
-    names: [
-      { id: 1, name: 'Name 1', rank: 10 },
-      { id: 2, name: 'Name 2', rank: 20 },
-    ],
-  });
+  const names = [
+    { id: 1, name: 'Name 1', rank: 10 },
+    { id: 2, name: 'Name 2', rank: 20 },
+  ];
+  const namesPage = renderNamesPage(names);
+  res.type('html').send(namesPage);
 });
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
-  console.log('Server is listening: http://localhost:3000');
+  console.log('Server is listening: http://localhost:3000/names');
 });
