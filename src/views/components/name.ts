@@ -1,3 +1,5 @@
+import sanitize from "sanitize-html";
+
 export type NamedItem = {
   name: string;
   rank: number;
@@ -7,7 +9,7 @@ export function renderName({name, rank}: NamedItem) {
 return `
 <li class="list-group-item d-flex align-items-start">
     <div class="ms-2 me-auto">
-      <div class="fw-bold">${ name }</div>
+      <div class="fw-bold">${ sanitize(name) }</div>
     </div>
     <div
       class="btn-toolbar"
@@ -26,7 +28,7 @@ return `
           class="form-control form-control-sm text-center"
           size="3"
           disabled
-          value= ${ rank }
+          value= ${ sanitize(rank.toString()) }
         />
         <button
           type="button"
